@@ -1,27 +1,39 @@
-# CpsElementsExampleAngular
+# CPS Elements - Exemplo - Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+Projeto de exemplo da integração de componentes [CPS Elements](https://cpsrepositorio.github.io/cps-elements/#/) com [Angular](https://angular.io/).
 
-## Development server
+> **CPS Elements** é parte do projeto de UI/UX institucional, que também sustenta o [CPS Design System](https://cpsrepositorio.github.io/cps-design-system/), projetados originalmente pelo professor [Erick Petrucelli](https://github.com/ErickPetru). Independentemente de suas origens e motivações iniciais, é um projeto totalmente _open-source_ disponível sob os termos da licença [MIT](https://github.com/cpsrepositorio/cps-elements/blob/main/LICENSE.md).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Executando o projeto
 
-## Code scaffolding
+Para execução local, é necessário um ambiente [Node](https://nodejs.org/en) pré-configurado. Em seguida, executa a instalação dos pacotes:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```sh
+npm install
+```
 
-## Build
+Para executar em modo de desenvolvimento, com suporte a _hot-reload_, executar em seguida:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```sh
+npm run dev
+```
 
-## Running unit tests
+Para testar a checagem de tipos, compilação e minificação para produção:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```sh
+npm run build
+```
 
-## Running end-to-end tests
+## Como a integração funciona
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Este projeto de exemplo simples já está pronto para execução, utilizando-se dos comandos já apresentados.
 
-## Further help
+Sua estruturação se baseia na [documentação de integração com Angular](https://cpsrepositorio.github.io/cps-elements/#/frameworks/angular) do CPS Elements. Embora detalhes possam ser obtidos em tal documentação, segue resumo do que foi realizado no projeto para que a integração funcione:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Instalação do CPS Elements usando `npm install @cps-elements/web`, ficando então registrado no [package.json](./package.json);
+- [Configuração](https://cpsrepositorio.github.io/cps-elements/#/frameworks/angular?id=configuração) em [src/app/app.module.ts](./src/app/app.module.ts) importando `CUSTOM_ELEMENTS_SCHEMA` de `@angular/core` e injetando em `@NgModule({ schemas })`;
+- Importação do tema base `light.css` em [src/styles.css](./src/styles.css);
+- Importação e chamada ao método `setBasePath` em [src/main.ts](./src/main.ts);
+- _[Opcional]_ Registrada biblioteca de ícones adicional em [src/main.ts](./src/main.ts) usando o método `registerIconLibrary`, apenas como exemplo;
+- Nos componentes Angular que utilizarão CPS Elements, basta re-exportar cada componente desejado, como exibido em [src/app/app.component.ts](./src/app/app.component.ts);
+- _[Opcional]_ Para [auto-completação de código](https://cpsrepositorio.github.io/cps-elements/#/fundamentos/utilização?id=auto-completação-de-código) dos CPS Elements e seus atributos no [VS Code](https://code.visualstudio.com/), vide [.vscode/settings.json](./.vscode/settings.json).
