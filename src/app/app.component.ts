@@ -1,6 +1,7 @@
+export { CpsButton } from '@cps-elements/web/components/button';
+export { CpsIcon } from '@cps-elements/web/components/icon';
+
 import { Component } from '@angular/core';
-export { default as CpsButton } from '@cps-elements/web/components/button';
-export { default as CpsIcon } from '@cps-elements/web/components/icon';
 
 @Component({
   selector: 'app-root',
