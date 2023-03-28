@@ -63,7 +63,8 @@
               "browserTarget": "cps-elements-example-angular:build:production"
             },
             "development": {
-              "browserTarget": "cps-elements-example-angular:build:development"
+              "browserTarget": "cps-elements-example-angular:build:development",
+              "disableHostCheck": true
             }
           },
           "defaultConfiguration": "development"
