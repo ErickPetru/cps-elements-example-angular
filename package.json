@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "dev": "ng serve --open",
+    "dev": "ng analytics off && ng serve --open",
     "build": "ng build",
     "test": "ng test"
   },
